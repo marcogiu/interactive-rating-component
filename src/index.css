@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: black;
+    font-family: Overpass;
+  }
+}
+
+@layer components {
+  .rating-btn {
+    @apply bg-VeryDarkBlue text-LightGrey w-10 h-10 rounded-full flex justify-center items-center hover:bg-Orange hover:text-White
+  }
+  .btn-on {
+    @apply bg-Orange text-White  w-10 h-10 rounded-full flex justify-center items-center
+  }
+}
