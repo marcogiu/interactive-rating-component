@@ -1,7 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Star from "./assets/icon-star.svg";
 import ThankIllustration from "./assets/illustration-thank-you.svg";
+import { MdArrowBack } from "react-icons/md";
 
 function App() {
   const [submit, setSubmit] = useState(false);
@@ -50,7 +50,16 @@ function App() {
           </button>
         </div>
       ) : (
-        <div className=" bg-DarkBlue w-[400px] h-[400px] rounded-3xl flex flex-col items-center justify-center p-5 gap-5">
+        <div className=" bg-DarkBlue w-[400px] h-[400px] rounded-3xl flex flex-col items-center justify-center p-4 gap-5">
+          <div className="w-full -mt-4">
+            <MdArrowBack
+              className="cursor-pointer text-Orange w-10 h-10 fixed p-2 bg-VeryDarkBlue rounded-full hover:bg-White active:bg-MediumGrey active:text-VeryDarkBlue"
+              onClick={() => {
+                setSubmit(!submit);
+                setNumClicked(null);
+              }}
+            />
+          </div>
           <div className="w-full flex justify-center">
             <img src={ThankIllustration} alt="star" className="w-36" />
           </div>
@@ -60,7 +69,7 @@ function App() {
           <p className=" text-White text-2xl mt-2">Thank you!</p>
           <p className=" text-MediumGrey text-center">
             We appreciate you taking the time to give a rating. If you ever need
-            more support, don't hesitate to get in touch!
+            more support, don&apos;t hesitate to get in touch!
           </p>
         </div>
       )}
